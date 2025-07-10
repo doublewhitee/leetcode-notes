@@ -9,24 +9,24 @@ on:
 
 jobs:
   docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统
 
     steps:
+      # 1. 拉取代码（包含完整 Git 历史记录，用于生成"最近更新时间"）
       - uses: actions/checkout@v4
         with:
-          # "最近更新时间" 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
+      # 2. 设置 Node.js 环境（使用 npm）
       - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
-          # 选择要使用的 node 版本
-          node-version: 22
-          # 缓存 npm 依赖
-          cache: npm
+          node-version: 22 # 指定 Node.js 版本
+          cache: npm # 缓存 npm 依赖，加速后续构建
 
+      # 3. 安装依赖（严格按 lockfile 版本）
       - name: 安装依赖
-        run: npm ci
+        run: npm ci # 等同于 `npm install --frozen-lockfile`
 
       # 运行构建脚本
       - name: 构建 VuePress 站点
@@ -37,10 +37,8 @@ jobs:
       - name: 部署到 GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
+          target_branch: gh-pages # 部署到 gh-pages 分支
+          build_dir: docs/.vuepress/dist # VuePress 默认输出目录
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
