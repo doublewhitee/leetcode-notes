@@ -1,26 +1,14 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
-  "/": [
-    "",
-    {
-      text: "Demo",
-      icon: "laptop-code",
-      prefix: "demo/",
-      link: "demo/",
-      children: "structure",
-    },
-    {
-      text: "Articles",
-      icon: "book",
-      prefix: "posts/",
-      children: "structure",
-    },
-    "intro",
-    {
-      text: "Slides",
-      icon: "person-chalkboard",
-      link: "https://ecosystem.vuejs.press/plugins/markdown/revealjs/demo.html",
-    },
+  "/leetcode/": "structure",
+
+  "/bar/": [
+    "" /* /bar/ */,
+    "three" /* /bar/three.html */,
+    "four" /* /bar/four.html */,
   ],
+
+  // 回退
+  "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
 });

@@ -7,7 +7,7 @@ export default hopeTheme({
   hostname: "https://mister-hope.github.io",
 
   author: {
-    name: "Mr.Hope",
+    name: "Whitee",
     url: "https://mister-hope.com",
   },
 
@@ -23,7 +23,8 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-  footer: "Default footer",
+  footer: "",
+  copyright: "MIT 协议 | 版权所有 © 2025-至今 Whitee",
 
   displayFooter: true,
 
