@@ -4,16 +4,16 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
+  hostname: "https://doublewhitee.github.io",
 
   author: {
     name: "Whitee",
-    url: "https://mister-hope.com",
+    url: "https://doublewhitee.github.io",
   },
 
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "https://github.com/doublewhitee",
 
   docsDir: "src",
 
@@ -22,6 +22,7 @@ export default hopeTheme({
 
   // sidebar
   sidebar,
+  sidebarSorter: "date",
 
   footer: "",
   copyright: "MIT 协议 | 版权所有 © 2025-至今 Whitee",
