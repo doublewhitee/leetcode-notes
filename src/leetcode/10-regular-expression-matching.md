@@ -109,45 +109,45 @@ $$
 
 ```javascript
 var isMatch = function(s, p) {
-    const m = s.length;
-    const n = p.length;
+  const m = s.length;
+  const n = p.length;
 
-    // 正确初始化二维数组
-    const f = new Array(m + 1);
-    for (let i = 0; i <= m; i++) {
-        f[i] = new Array(n + 1).fill(false);
-    }
-    
-    f[0][0] = true;
+  // 正确初始化二维数组
+  const f = new Array(m + 1);
+  for (let i = 0; i <= m; i++) {
+    f[i] = new Array(n + 1).fill(false);
+  }
+  
+  f[0][0] = true;
 
-    for (let i = 0; i <= m; i++) {
-        for (let j = 1; j <= n; j++) {
-            if (p[j - 1] === "*") {
-                // 匹配0次的情况
-                f[i][j] = f[i][j - 2];
-                // 匹配1次或多次的情况
-                if (matches(s, p, i, j - 1)) {
-                    f[i][j] = f[i][j] || (i > 0 && f[i - 1][j]);
-                }
-            } else {
-                if (matches(s, p, i, j)) {
-                    f[i][j] = i > 0 && f[i - 1][j - 1];
-                }
-            }
+  for (let i = 0; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (p[j - 1] === "*") {
+        // 匹配0次的情况
+        f[i][j] = f[i][j - 2];
+        // 匹配1次或多次的情况
+        if (matches(s, p, i, j - 1)) {
+          f[i][j] = f[i][j] || (i > 0 && f[i - 1][j]);
         }
+      } else {
+        if (matches(s, p, i, j)) {
+          f[i][j] = i > 0 && f[i - 1][j - 1];
+        }
+      }
     }
+  }
 
-    return f[m][n];
+  return f[m][n];
 };
 
 var matches = function(s, p, i, j) {
-    if (i === 0) {
-        return false;
-    }
-    if (p[j - 1] === ".") {
-        return true;
-    }
-    return s[i - 1] === p[j - 1];
+  if (i === 0) {
+    return false;
+  }
+  if (p[j - 1] === ".") {
+    return true;
+  }
+  return s[i - 1] === p[j - 1];
 };
 ```
 
