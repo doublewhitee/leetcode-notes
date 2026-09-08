@@ -1,6 +1,7 @@
 ---
 icon: code
 date: 2026-01-23
+order: 12
 category:
   - LeetCode
 tag:

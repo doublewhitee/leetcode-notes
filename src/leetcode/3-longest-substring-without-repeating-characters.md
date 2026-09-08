@@ -1,6 +1,7 @@
 ---
 icon: code
 date: 2025-08-25
+order: 3
 category:
   - LeetCode
 tag:
