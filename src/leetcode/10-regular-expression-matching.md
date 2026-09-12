@@ -67,9 +67,9 @@ $$
 
 $$
 \begin{align}
-f[i][j]=f[i−1][j−2],\ & if s[i]=p[j−1] \\
-f[i][j]=f[i−2][j−2],\ & if s[i−1]=s[i]=p[j−1] \\
-f[i][j]=f[i−3][j−2],\ & if s[i−2]=s[i−1]=s[i]=p[j−1] \\
+f[i][j]=f[i−1][j−2],\ & if s[i]=p[j−1] \\
+f[i][j]=f[i−2][j−2],\ & if s[i−1]=s[i]=p[j−1] \\
+f[i][j]=f[i−3][j−2],\ & if s[i−2]=s[i−1]=s[i]=p[j−1] \\
 ⋯⋯
 \end{align}
 $$
