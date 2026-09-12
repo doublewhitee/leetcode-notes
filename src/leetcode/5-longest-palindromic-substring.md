@@ -36,8 +36,8 @@ sticky: true
 
 $$
 P(i,j)=\begin{cases}
-true, & 如果子串 Si…Sj 是回文串 \\
-false, & 其他情况
+true, & \text{如果子串 } S_i \dots S_j \text{ 是回文串} \\
+false, & \text{其他情况}
 \end{cases}
 $$
 
