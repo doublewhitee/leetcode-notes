@@ -1,6 +1,7 @@
 node_modules
 .vscode
 .cursor
+.claude
 src/.vuepress/.cache
 src/.vuepress/.temp
 src/.vuepress/.dist
